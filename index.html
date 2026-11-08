@@ -2,8 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Peringatan Akses 18+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Halaman</title>
+    
+    <!-- TAG MONETAG VIGNETTE AD (Letakkan Script Vignette Monetag di bawah ini) -->
+    <!-- Contoh: <script src="https://alwingulla.com/vignette.min.js" data-zone="1234567" async></script> -->
+    
     <style>
         * {
             box-sizing: border-box;
@@ -11,89 +15,70 @@
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-
         body {
-            background-color: #0b0c10;
-            color: #ffffff;
+            background-color: #f4f6f9;
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 15px;
+            padding: 20px;
         }
-
         .card {
-            background: #1f2833;
-            border: 1px solid #333;
-            border-radius: 16px;
-            padding: 24px 20px;
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             max-width: 400px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
         }
-
-        .badge-18 {
-            background-color: #e50914;
-            color: #fff;
-            font-weight: bold;
-            font-size: 14px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eef2ff;
+            color: #4f46e5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
         }
-
         h1 {
             font-size: 20px;
-            margin-bottom: 10px;
-            color: #fff;
-            line-height: 1.4;
+            margin-bottom: 8px;
+            color: #111827;
         }
-
-        p.desc {
+        p {
             font-size: 14px;
-            color: #c5c6c7;
-            margin-bottom: 20px;
+            color: #6b7280;
+            margin-bottom: 25px;
             line-height: 1.5;
         }
-
-        .step-container {
-            display: block;
-        }
-
-        .btn {
+        .btn-continue {
             display: block;
             width: 100%;
-            background: linear-gradient(135deg, #ff007f, #7928ca);
+            padding: 14px 20px;
+            background-color: #4f46e5;
             color: #ffffff;
             font-size: 16px;
-            font-weight: bold;
-            padding: 14px 0;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
+            font-weight: 600;
             text-decoration: none;
-            margin-bottom: 12px;
-            transition: transform 0.2s, opacity 0.2s;
-            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
         }
-
-        .btn:active {
+        .btn-continue:hover {
+            background-color: #4338ca;
+        }
+        .btn-continue:active {
             transform: scale(0.98);
         }
-
-        .btn-secondary {
-            background: #2c3e50;
-            box-shadow: none;
-            color: #bdc3c7;
-        }
-
         .footer-note {
             font-size: 11px;
-            color: #666;
+            color: #9ca3af;
             margin-top: 15px;
         }
     </style>
@@ -101,35 +86,19 @@
 <body>
 
     <div class="card">
-        <span class="badge-18">Khusus 18+</span>
-
-        <!-- Step 1: Pertanyaan Usia -->
-        <div id="step1" class="step-container">
-            <h1>Konfirmasi Usia Anda</h1>
-            <p class="desc">Konten ini memuat materi khusus dewasa. Apakah Anda berusia 18 tahun atau lebih?</p>
-            <button class="btn" onclick="nextStep(2)">YA, SAYA 18+ TAHUN</button>
-            <button class="btn btn-secondary" onclick="alert('Akses Ditolak')">TIDAK</button>
-        </div>
-
-        <!-- Step 2: Micro Question (Meningkatkan Engagment/CPM) -->
-        <div id="step2" class="step-container" style="display: none;">
-            <h1>Verifikasi Keamanan</h1>
-            <p class="desc">Apakah Anda menyetujui penayangan konten privasi dewasa di perangkat seluler Anda?</p>
-            <!-- MASUKKAN LINK ADSTERRA SMARTLINK ANDA PADA HREF DI BAWAH -->
-            <a href="https://www.videyy.biz.id" class="btn">SETUJU & LANJUTKAN</a>
-        </div>
+        <div class="icon">✓</div>
+        <h1>Siap Lanjutkan?</h1>
+        <p>Klik tombol di bawah ini untuk mengonfirmasi dan melanjutkan ke tujuan Anda.</p>
+        
+        <!-- MASUKKAN LINK DIRECTLINK MONETAG ANDA PADA HREF -->
+        <a href="https://DIRECTLINK_MONETAG_ANDA" class="btn-continue" id="proceedBtn">
+            Lanjutkan →
+        </a>
 
         <div class="footer-note">
-            Koneksi Terenkripsi SSL (256-bit) • Aman & Privat
+            Sistem Keamanan Terverifikasi
         </div>
     </div>
-
-    <script>
-        function nextStep(step) {
-            document.getElementById('step1').style.display = 'none';
-            document.getElementById('step2').style.display = 'block';
-        }
-    </script>
 
 </body>
 </html>
